@@ -17,7 +17,7 @@
     "lint:watch": "yarn lint --watch",
     "prepare": "yarn sort-package-json",
     "prepublish": "yarn build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "yarn lint"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
