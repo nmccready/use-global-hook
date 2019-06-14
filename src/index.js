@@ -15,7 +15,15 @@ function useCustom(React) {
   React.useEffect(() => {
     this.listeners.push(newListener);
     return () => {
-      this.listeners = this.listeners.filter((listener) => listener !== newListener);
+      const listenersLength = this.listeners.length;
+      const filtered = [];
+      for (let i = 0; i < listenersLength; i++) {
+        const listener = this.listeners[i];
+        if (listener !== newListener) {
+          filtered.push(listener);
+        }
+      }
+      this.listeners = filtered;
     };
   }, []);
   return [this.state, this.actions];
