@@ -30,6 +30,7 @@
     "babel-eslint": "^10.0.1",
     "coveralls": "^3.0.4",
     "del": "^4.1.1",
+    "eslint-config-gulp": "^3.0.1",
     "eslint-config-prettier": "^4.0.0",
     "eslint-import-resolver-jest": "^2.1.1",
     "eslint-plugin-jest": "^22.3.2",
