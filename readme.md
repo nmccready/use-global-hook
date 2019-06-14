@@ -1,4 +1,4 @@
-# use-global-hook
+# @znemz/use-global-hook [![NPM version][npm-image]][npm-url] [![build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url]
 
 Easy state management for react using hooks in less than 1kb.
 
@@ -8,7 +8,7 @@ Easy state management for react using hooks in less than 1kb.
 Minimal example:
 ```javascript
 import React from 'react';
-import useGlobalHook from 'use-global-hook';
+import useGlobalHook from '@znemz/use-global-hook';
 
 const initialState = {
   counter: 0,
@@ -58,3 +58,10 @@ The parent component won't render again.
 Search GitHub repos by username.
 Handle the ajax request asynchronously with async/await.
 Update the requests counter on every search.
+
+[npm-image]: https://img.shields.io/npm/v/@znemz/use-global-hook.svg
+[npm-url]: https://www.npmjs.com/package/@znemz/use-global-hook
+[travis-image]: https://img.shields.io/travis/nmccready/use-global-hook.svg
+[travis-url]: https://travis-ci.org/nmccready/use-global-hook
+[coveralls-image]: https://coveralls.io/repos/github/nmccready/use-global-hook/badge.svg
+[coveralls-url]: https://coveralls.io/github/nmccready/use-global-hook?branch=master
