@@ -2,7 +2,11 @@ function setState(newState, isRef) {
   const listenersLength = this.listeners.length;
   this.state = isRef ? newState : { ...this.state, ...newState };
   for (let i = 0; i < listenersLength; i++) {
-    this.listeners[i](this.state);
+    const fn = this.listeners[i];
+    if (!fn || typeof fn !== 'function') {
+      continue;
+    }
+    fn(this.state);
   }
 }
 
