@@ -23,6 +23,11 @@ function useCustom(React) {
           filtered.push(listener);
         }
       }
+      /*
+      This is dangerous as we could be in the middle of calling setState or setRef.
+      setting the listeners should come after the dust has settled.
+      Using an immutable store might protect this.
+      */
       this.listeners = filtered;
     };
   }, []);
