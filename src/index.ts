@@ -1,5 +1,5 @@
 import { EffectCallback, DependencyList, Dispatch, SetStateAction } from 'react';
-import baseActions, { OuterBaseActions, InnerBaseActions } from './actions';
+import baseActions, { InnerBaseActions } from './actions';
 
 export type UseEffect = (effect: EffectCallback, deps?: DependencyList) => void;
 export type UseState = <S>(initialState?: S | (() => S)) => [S, Dispatch<SetStateAction<S>>];
