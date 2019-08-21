@@ -27,7 +27,7 @@ export interface UseStoreProps<T, InnerA, OuterA, WorkR> {
   hookWork?: () => WorkR;
 }
 
-export type UseStoreFn = <T, InnerA, OuterA, WorkR>(
+export type UseStoreFn = <T, InnerA, OuterA, WorkR = undefined>(
   _: UseStoreProps<T, InnerA, OuterA, WorkR>
 ) => () => [T, OuterA, ...WorkR[]];
 
@@ -55,7 +55,7 @@ function setRef<T, A>(this: Store<T, A>, newState: T): void {
   setState.call(this, newState, true);
 }
 
-function useCustom<T, A, WorkR extends WorkR[]>(
+function useCustom<T, A, WorkR extends WorkR[] = undefined>(
   this: Store<T, A>,
   React: ReactLib,
   hookWork?: () => WorkR
@@ -106,7 +106,7 @@ function associateActions<T, InnerA, OuterA>(
   return associatedActions;
 }
 
-const useStore = <T, InnerA, OuterA, WorkR>(
+const useStore = <T, InnerA, OuterA, WorkR = undefined>(
   {
     React,
     initialState,

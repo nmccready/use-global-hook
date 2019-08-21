@@ -54,3 +54,4 @@ debug.js
 .prettierrc.js
 .eslint*
 .tmp
+babel.config.js
