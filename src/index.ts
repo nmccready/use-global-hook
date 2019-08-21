@@ -1,4 +1,5 @@
 import { EffectCallback, DependencyList, Dispatch, SetStateAction } from 'react';
+import baseActions, { OuterBaseActions, InnerBaseActions } from './actions';
 
 export type UseEffect = (effect: EffectCallback, deps?: DependencyList) => void;
 export type UseState = <S>(initialState?: S | (() => S)) => [S, Dispatch<SetStateAction<S>>];
@@ -18,12 +19,16 @@ export type AssociateActionsFn = <T, A>(store: Store<T, A>, actions: A) => A;
 
 export type Initializer<T, A> = (_: Store<T, A>) => void;
 
+export interface UseStoreProps<T, InnerA, OuterA, WorkR> {
+  React: ReactLib;
+  initialState?: T;
+  actions?: InnerA | InnerBaseActions<T>;
+  initializer?: Initializer<T, OuterA>;
+  hookWork?: () => WorkR;
+}
+
 export type UseStoreFn = <T, InnerA, OuterA, WorkR>(
-  React: ReactLib,
-  initialState: T,
-  actions: InnerA,
-  initializer?: Initializer<T, InnerA>,
-  hookWork?: () => WorkR
+  _: UseStoreProps<T, InnerA, OuterA, WorkR>
 ) => () => [T, OuterA, ...WorkR[]];
 
 export interface Store<T, OuterA> {
@@ -102,12 +107,14 @@ function associateActions<T, InnerA, OuterA>(
 }
 
 const useStore = <T, InnerA, OuterA, WorkR>(
-  React: ReactLib,
-  initialState: T,
-  actions: InnerA,
-  initializer?: Initializer<T, OuterA>,
-  hookWork?: () => WorkR
-) => {
+  {
+    React,
+    initialState,
+    actions = baseActions,
+    initializer,
+    hookWork,
+  }: UseStoreProps<T, InnerA, OuterA, WorkR> = {} as UseStoreProps<T, InnerA, OuterA, WorkR>
+): (() => [T, OuterA, ...WorkR[]]) => {
   const store = { state: initialState, listeners: [] } as Store<T, OuterA>;
   store.setState = setState.bind(store);
   store.setRef = setRef.bind(store);
