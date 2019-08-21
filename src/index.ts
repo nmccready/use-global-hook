@@ -18,12 +18,13 @@ export type AssociateActionsFn = <T, A>(store: Store<T, A>, actions: A) => A;
 
 export type Initializer<T, A> = (_: Store<T, A>) => void;
 
-export type UseStoreFn = <T, InnerA, OuterA>(
+export type UseStoreFn = <T, InnerA, OuterA, WorkR>(
   React: ReactLib,
   initialState: T,
   actions: InnerA,
-  initializer?: Initializer<T, InnerA>
-) => () => [T, OuterA];
+  initializer?: Initializer<T, InnerA>,
+  hookWork?: () => WorkR
+) => () => [T, OuterA, ...WorkR[]];
 
 export interface Store<T, OuterA> {
   setState: SetStateFn<T>;
