@@ -49,7 +49,11 @@ function setRef<T, A>(this: Store<T, A>, newState: T): void {
   setState.call(this, newState, true);
 }
 
-function useCustom<T, A>(this: Store<T, A>, React: ReactLib): [T, A] {
+function useCustom<T, A, WorkR extends WorkR[]>(
+  this: Store<T, A>,
+  React: ReactLib,
+  hookWork?: () => WorkR
+): [T, A, ...WorkR[]] {
   const newListener = React.useState()[1];
   React.useEffect(() => {
     this.listeners.push(newListener);
@@ -70,7 +74,11 @@ function useCustom<T, A>(this: Store<T, A>, React: ReactLib): [T, A] {
       this.listeners = filtered;
     };
   }, []);
-  return [this.state, this.actions];
+  let workAdditions = [];
+  if (hookWork) {
+    workAdditions = hookWork() || [];
+  }
+  return [this.state, this.actions, ...workAdditions];
 }
 
 function associateActions<T, InnerA, OuterA>(
@@ -92,11 +100,12 @@ function associateActions<T, InnerA, OuterA>(
   return associatedActions;
 }
 
-const useStore = <T, InnerA, OuterA>(
+const useStore = <T, InnerA, OuterA, WorkR>(
   React: ReactLib,
   initialState: T,
   actions: InnerA,
-  initializer?: Initializer<T, OuterA>
+  initializer?: Initializer<T, OuterA>,
+  hookWork?: () => WorkR
 ) => {
   const store = { state: initialState, listeners: [] } as Store<T, OuterA>;
   store.setState = setState.bind(store);
@@ -105,7 +114,7 @@ const useStore = <T, InnerA, OuterA>(
   if (initializer) {
     initializer(store);
   }
-  return useCustom.bind(store, React);
+  return useCustom.bind(store, React, hookWork);
 };
 
 export default useStore;
