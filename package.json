@@ -13,14 +13,13 @@
   "scripts": {
     "build": "yarn gulp default",
     "gulp": "node -r esm ./node_modules/.bin/gulp",
-    "postinstall": "yarn postinstall:1 && yarn postinstall:2 && yarn postinstall:3 && yarn sort-package-json",
     "jest": "node -r esm ./node_modules/.bin/jest",
     "lint": "eslint --ext .js,.ts,.tsx *.js src --color",
     "lint:watch": "yarn lint --watch",
     "postinstall:1": "yarn js-common-editorconfig-clone && yarn js-common-debug-clone",
     "postinstall:2": "yarn js-common-eslint-config-react-mono-clone",
     "postinstall:3": "yarn js-common-prettierrc-clone && yarn js-common-eslint-config-mono-clone",
-    "prepare": "yarn sort-package-json",
+    "prepare": "yarn postinstall:1 && yarn postinstall:2 && yarn postinstall:3 && yarn sort-package-json",
     "prepublish": "yarn build",
     "test": "yarn lint",
     "test:ci": "yarn test"
