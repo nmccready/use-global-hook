@@ -22,7 +22,7 @@
     "postinstall:3": "yarn js-common-prettierrc-clone && yarn js-common-eslint-config-mono-clone",
     "prepare": "yarn postinstall:1 && yarn postinstall:2 && yarn postinstall:3 && yarn sort-package-json",
     "test": "yarn jest",
-    "test:ci": "yarn lint && yarn test && yarn coveralls",
+    "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
     "preversion": "yarn build"
   },
   "devDependencies": {
