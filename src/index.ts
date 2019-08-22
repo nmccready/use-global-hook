@@ -1,5 +1,5 @@
 import { EffectCallback, DependencyList, Dispatch, SetStateAction } from 'react';
-import baseActions, { InnerBaseActions } from './actions';
+import baseActions, { InnerBaseActions, OuterBaseActions } from './actions';
 
 export type UseEffect = (effect: EffectCallback, deps?: DependencyList) => void;
 export type UseState = <S>(initialState?: S | (() => S)) => [S, Dispatch<SetStateAction<S>>];
@@ -19,7 +19,12 @@ export type AssociateActionsFn = <T, A>(store: Store<T, A>, actions: A) => A;
 
 export type Initializer<T, A> = (_: Store<T, A>) => void;
 
-export interface UseStoreProps<T, InnerA, OuterA, WorkR> {
+export interface UseStoreProps<
+  T,
+  InnerA = InnerBaseActions<T>,
+  OuterA = OuterBaseActions<T>,
+  WorkR = undefined
+> {
   React: ReactLib;
   initialState?: T;
   actions?: InnerA | InnerBaseActions<T>;
@@ -27,11 +32,16 @@ export interface UseStoreProps<T, InnerA, OuterA, WorkR> {
   hookWork?: () => WorkR;
 }
 
-export type UseStoreFn = <T, InnerA, OuterA, WorkR = undefined>(
+export type UseStoreFn = <
+  T,
+  InnerA = InnerBaseActions<T>,
+  OuterA = OuterBaseActions<T>,
+  WorkR = undefined
+>(
   _: UseStoreProps<T, InnerA, OuterA, WorkR>
 ) => () => [T, OuterA, ...WorkR[]];
 
-export interface Store<T, OuterA> {
+export interface Store<T, OuterA = OuterBaseActions<T>> {
   setState: SetStateFn<T>;
   setRef: SetRefFn<T>;
   actions: OuterA;
@@ -55,10 +65,12 @@ function setRef<T, A>(this: Store<T, A>, newState: T): void {
   setState.call(this, newState, true);
 }
 
+export type HookWork<T = undefined> = () => T;
+
 function useCustom<T, A, WorkR extends WorkR[] = undefined>(
   this: Store<T, A>,
   React: ReactLib,
-  hookWork?: () => WorkR
+  hookWork?: HookWork<WorkR>
 ): [T, A, ...WorkR[]] {
   const newListener = React.useState()[1];
   React.useEffect(() => {
@@ -106,15 +118,19 @@ function associateActions<T, InnerA, OuterA>(
   return associatedActions;
 }
 
-const useStore = <T, InnerA, OuterA, WorkR = undefined>(
+const useStore = <
+  T,
+  InnerA = InnerBaseActions<T>,
+  OuterA = OuterBaseActions<T>,
+  WorkR = undefined
+>(
   {
     React,
     initialState,
     actions = baseActions,
     initializer,
-    hookWork,
   }: UseStoreProps<T, InnerA, OuterA, WorkR> = {} as UseStoreProps<T, InnerA, OuterA, WorkR>
-): (() => [T, OuterA, ...WorkR[]]) => {
+): ((_?: HookWork<WorkR>) => [T, OuterA, ...WorkR[]]) => {
   const store = { state: initialState, listeners: [] } as Store<T, OuterA>;
   store.setState = setState.bind(store);
   store.setRef = setRef.bind(store);
@@ -122,7 +138,7 @@ const useStore = <T, InnerA, OuterA, WorkR = undefined>(
   if (initializer) {
     initializer(store);
   }
-  return useCustom.bind(store, React, hookWork);
+  return useCustom.bind(store, React);
 };
 
 export default useStore;

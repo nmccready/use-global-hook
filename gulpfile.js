@@ -6,7 +6,12 @@ const { compilerOptions: tsconfig } = require('./tsconfig.json');
 gulp.task('clean', () => del(['.tmp', 'lib']));
 
 const build = (
-  src = ['src/**/*.ts?(x)', '!src/**/*.spec.ts?(x)', '!src/**/*.test.ts?(x)'],
+  src = [
+    'src/**/*.ts?(x)',
+    '!src/**/*.spec.ts?(x)',
+    '!src/**/*.test.ts?(x)',
+    '!src/test/**/*',
+  ],
   dest = 'lib'
 ) => () =>
   gulp
