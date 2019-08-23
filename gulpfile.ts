@@ -1,31 +1,20 @@
 import gulp from 'gulp';
 import ts from 'gulp-typescript';
-import umd from 'gulp-umd';
 import del from 'del';
-import { VinylFile } from 'gulp-typescript/release/types';
-import { pascal } from 'change-case';
 
+/*
+Gulp is for an itemized build so you can easily
+pick exactly what files you want without tree shaking.
+
+So this is for lib / cjs build.
+*/
 const { compilerOptions: tsconfig } = require('./tsconfig.json');
+const pkg = require('./package.json');
 
-gulp.task('clean', () => del(['.tmp', 'lib', 'umd']));
+const getDir = (fileName: string) => fileName.split('/')[0];
 
-const umdNaming = (file: VinylFile) => {
-  if (file.basename === 'index.js') return 'UseGlobalHook';
-  if (file.basename === 'actions.js') return 'UseGlobalHookActions';
-  // @ts-ignore
-  return pascal(file);
-};
-
-gulp.task('umd', () =>
-  gulp
-    .src('lib/*.js')
-    .pipe(
-      umd({
-        exports: umdNaming,
-        namespace: umdNaming,
-      })
-    )
-    .pipe(gulp.dest('umd'))
+gulp.task('clean', () =>
+  del(['.tmp', getDir(pkg.main), '*.log', getDir(pkg.umd), getDir(pkg.module)])
 );
 
 const build = (
@@ -44,4 +33,4 @@ const build = (
 
 gulp.task('build', build());
 
-gulp.task('default', gulp.series('clean', gulp.series('build', 'umd')));
+gulp.task('default', gulp.series('clean', gulp.series('build')));

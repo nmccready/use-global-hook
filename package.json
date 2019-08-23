@@ -12,7 +12,7 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "build": "yarn gulp default",
+    "build": "yarn gulp default && yarn roll:it",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "gulp": "node -r esm ./node_modules/.bin/gulp",
     "jest": "node -r esm ./node_modules/.bin/jest",
@@ -24,6 +24,7 @@
     "prepare": "yarn postinstall:1 && yarn postinstall:2 && yarn postinstall:3 && yarn sort-package-json",
     "test": "yarn jest",
     "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
+    "roll:it": "yarn rollup -c ./rollup.config.ts",
     "preversion": "yarn build"
   },
   "devDependencies": {
@@ -40,15 +41,16 @@
     "@znemz/js-common-prettierrc-clone": "^0.0.23",
     "@znemz/react-extras-jest": "^1.0.0-alpha.5",
     "bluebird": "^3.5.5",
-    "change-case": "^3.1.0",
     "coveralls": "^3.0.4",
     "del": "^4.1.1",
     "esm": "^3.2.22",
-    "gulp-umd": "^2.0.0",
     "prettier": "^1.18.2",
     "react": "^16.8",
+    "rollup": "^1.20.1",
+    "rollup-plugin-typescript": "^1.0.1",
     "sort-package-json": "^1.21.0",
     "typescript": "^3.5.1"
   },
+  "module": "module/index.js",
   "umd": "umd/index.js"
 }

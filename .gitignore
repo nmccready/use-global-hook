@@ -30,6 +30,7 @@ node_modules
 dist
 lib
 umd
+module
 
 # IDEA/Webstorm project files
 .idea
