@@ -11,6 +11,7 @@
     "debug.js"
   ],
   "main": "lib/index.js",
+  "module": "module/index.js",
   "scripts": {
     "build": "yarn gulp default && yarn roll:it",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
@@ -22,9 +23,9 @@
     "postinstall:2": "yarn js-common-eslint-config-react-mono-clone && js-common-babel-config-clone",
     "postinstall:3": "yarn js-common-prettierrc-clone && yarn js-common-eslint-config-mono-clone",
     "prepare": "yarn postinstall:1 && yarn postinstall:2 && yarn postinstall:3 && yarn sort-package-json",
+    "roll:it": "yarn rollup -c ./rollup.config.ts",
     "test": "yarn jest",
     "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
-    "roll:it": "yarn rollup -c ./rollup.config.ts",
     "preversion": "yarn build"
   },
   "devDependencies": {
@@ -51,6 +52,5 @@
     "sort-package-json": "^1.21.0",
     "typescript": "^3.5.1"
   },
-  "module": "module/index.js",
   "umd": "umd/index.js"
 }
