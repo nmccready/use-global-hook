@@ -1278,20 +1278,20 @@
     lodash "^4.17.11"
     requireindex "~1.1.0"
 
-"@znemz/js-common-babel-config-clone@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-babel-config-clone/-/js-common-babel-config-clone-0.0.22.tgz#ad106827e71068f1e6f6ec73036a15dcefa769e9"
-  integrity sha512-yZsB/HkRa+Dmr015N2Yohy30iTVXrvG7gsln67VnHBFEI9RdWn8ASKDNbby8x2FXJApydOKPM97m3d8rxWYE9A==
+"@znemz/js-common-babel-config-clone@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-babel-config-clone/-/js-common-babel-config-clone-0.0.23.tgz#60c00b12261d28f33d249aed22328b89a20d9b5b"
+  integrity sha512-EB/l6t9w0MesHbQsh3Qb5eA5lvU7XZnJffE9IBzU569Z+x5QmRS0ioJkbws4r3mHjimX7az6UfoZO1m/e6RFCA==
   dependencies:
-    "@znemz/js-common-babel-config" "^0.0.22"
-    "@znemz/js-common-debug-clone" "^0.0.22"
-    "@znemz/js-common-tsconfig-clone" "^0.0.22"
+    "@znemz/js-common-babel-config" "^0.0.23"
+    "@znemz/js-common-debug-clone" "^0.0.23"
+    "@znemz/js-common-tsconfig-clone" "^0.0.23"
     cpy-cli "^2.0.0"
 
-"@znemz/js-common-babel-config@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-babel-config/-/js-common-babel-config-0.0.22.tgz#97611758b332e1769a04076b9c493695eea4a453"
-  integrity sha512-4Zo49gjAyAhBeaZxG6wvh2vegrCiWX8SzBUaoVGO5RHRkO28dsIpfewbG8QmaEscRbfK34Pn3w1U/y/Z5DV9NQ==
+"@znemz/js-common-babel-config@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-babel-config/-/js-common-babel-config-0.0.23.tgz#695883465c5ca7a85233da337196b67a1335affa"
+  integrity sha512-WzrMuEuT5Nqwag55IZt7+JEVIZCUWckJ5AXqHIrKUBS5bXt8yBsh169c5uhIlP3YEDeMX2PuJbxnzHlw6/PkeA==
   dependencies:
     "@babel/cli" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -1304,60 +1304,60 @@
     "@babel/preset-react" "^7.0.0"
     "@babel/preset-typescript" "^7.3.3"
     "@types/babel__core" "^7.1.2"
-    "@znemz/js-common-debug-clone" "^0.0.22"
-    "@znemz/js-common-tsconfig-clone" "^0.0.22"
+    "@znemz/js-common-debug-clone" "^0.0.23"
+    "@znemz/js-common-tsconfig-clone" "^0.0.23"
 
-"@znemz/js-common-cpy-cli@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-cpy-cli/-/js-common-cpy-cli-0.0.22.tgz#036ee7a8110416ac48198d34fec78124de25b990"
-  integrity sha512-yG4DTfjioi9oM2s3Lgc339VvNGcwqX3L9EIL1ZWef6vOEQJ4GkGNQ9m5aJCak21LNx0kjm31+8vl9q+JFk/E0A==
+"@znemz/js-common-cpy-cli@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-cpy-cli/-/js-common-cpy-cli-0.0.23.tgz#3bd3ba26b4430d6574962fc1c90406e8a7b9a90f"
+  integrity sha512-9GRRwawBKmaSQQuNWJq0ex5Q+yXNnf/MD/n+tzHVV3+53QK0wwEQnZyvU4rqdIiFgHaPCjW3W0XhF/RKpvNFjQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@znemz/js-common-debug-clone" "^0.0.22"
-    "@znemz/js-common-tsconfig-clone" "^0.0.22"
+    "@znemz/js-common-debug-clone" "^0.0.23"
+    "@znemz/js-common-tsconfig-clone" "^0.0.23"
     commander "^3.0.0"
     cpy "^7"
     cpy-cli "^2.0.0"
     debug-fabulous "^1.1.0"
 
-"@znemz/js-common-debug-clone@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-debug-clone/-/js-common-debug-clone-0.0.22.tgz#c5c7492205be5deb4667b5b7d3d73e6d5198aee4"
-  integrity sha512-JZXbY6xzl6XvZ3qglmt2+jCDsgAaxHZ9mWQUdxmS5/zAMU62O6S554on77VqZ8Q8+umwHkrdMeAyGIrzYqPJzw==
+"@znemz/js-common-debug-clone@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-debug-clone/-/js-common-debug-clone-0.0.23.tgz#7695d3e393da01dcfc6115fe8f4c271090c880ba"
+  integrity sha512-9sFXWSA7giqW26GKxqsECzua6ISnuVWuon3wz/f1eCEVOmbImbagUGMYJx3ukCEZzU0gBYmUWJJpJ5ctrrfNSA==
   dependencies:
-    "@znemz/js-common-cpy-cli" "^0.0.22"
+    "@znemz/js-common-cpy-cli" "^0.0.23"
     debug-fabulous "^1.1.0"
 
-"@znemz/js-common-editorconfig-clone@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-editorconfig-clone/-/js-common-editorconfig-clone-0.0.22.tgz#49b1cade1ca5d8803ee76a0e65c020ef907a805d"
-  integrity sha512-JtwLqVvWmLTLGWtJr7SW7O5amR83Z4+de7blbhNp6wMmUUxkEXcXTDQrANpXhqorFJpuuah7VR8aIVXFpYNkUg==
+"@znemz/js-common-editorconfig-clone@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-editorconfig-clone/-/js-common-editorconfig-clone-0.0.23.tgz#156dedc26b80f9228c06828b09f42b0af75197c0"
+  integrity sha512-0uJeW8FTUll1dx6Igw1ltLXca5TB/gyaSwVS8GHpStX0yIKugva4PlVWeJw2oSIaAJ53AhJYLuNhFRAAlIMe3Q==
   dependencies:
-    "@znemz/js-common-debug-clone" "^0.0.22"
-    "@znemz/js-common-tsconfig-clone" "^0.0.22"
+    "@znemz/js-common-debug-clone" "^0.0.23"
+    "@znemz/js-common-tsconfig-clone" "^0.0.23"
     cpy-cli "^2.0.0"
 
-"@znemz/js-common-eslint-config-mono-clone@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-eslint-config-mono-clone/-/js-common-eslint-config-mono-clone-0.0.22.tgz#32d8c959883029d3540c37bf65b52c47ebfafdaa"
-  integrity sha512-tr3dfmwilkQiI3EoTZK2PNSVKuc54YL2OrU9UpYosIAqMPuYSdfGcl2VOQ3BfrQ+WUXywFAT6UXafDgX3SWrhw==
+"@znemz/js-common-eslint-config-mono-clone@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-eslint-config-mono-clone/-/js-common-eslint-config-mono-clone-0.0.23.tgz#04042bedbe7b5375e9b04b0483c4172bc5145c3d"
+  integrity sha512-dsL1jNFxWVCo32v2SYLXrEpDlOuGhJuR6wOsGJeqiHK4598bngtdRVosT9JgPamhB7EbeQz906sz4sORR25TRw==
   dependencies:
-    "@znemz/js-common-cpy-cli" "^0.0.22"
-    "@znemz/js-common-eslint-config" "^0.0.22"
+    "@znemz/js-common-cpy-cli" "^0.0.23"
+    "@znemz/js-common-eslint-config" "^0.0.23"
 
-"@znemz/js-common-eslint-config-react-mono-clone@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-eslint-config-react-mono-clone/-/js-common-eslint-config-react-mono-clone-0.0.22.tgz#9a570d688ba988c8673f9a70ea2d01ce01b00c97"
-  integrity sha512-M1tWaBn6MX8KyS7hZS7k3sUIP2cfVc/Rcg3maaY0pl4tvb7I0awfZZYaaOz73r5w2YDR2oVK/4gIRAzm3nWcpQ==
+"@znemz/js-common-eslint-config-react-mono-clone@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-eslint-config-react-mono-clone/-/js-common-eslint-config-react-mono-clone-0.0.23.tgz#d9083afed1b54575c305b0de596c91bcd191cc65"
+  integrity sha512-98Wn5voNMPAcc9X9y27NzoEhbRaBN+T6JMmKvynjhVN0Ebfi6yAKKtlMKo7rmd4snYWXrjNWqU2Ru4ZJ2Fji6w==
   dependencies:
-    "@znemz/js-common-eslint-config-react" "^0.0.22"
+    "@znemz/js-common-eslint-config-react" "^0.0.23"
 
-"@znemz/js-common-eslint-config-react@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-eslint-config-react/-/js-common-eslint-config-react-0.0.22.tgz#5ea94191808f203b8eee3ef0f453dc6e33a4f15a"
-  integrity sha512-hmTCHo86F9Rl75zN8lCEXlVHSl53mahV/cIxnNSuLytOxSebOWeSzuU07rfo3KCVXe6cinm77rFd7PGQWyiIMA==
+"@znemz/js-common-eslint-config-react@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-eslint-config-react/-/js-common-eslint-config-react-0.0.23.tgz#2ac793e99e6495823a0cd678f3254fad68ccef9a"
+  integrity sha512-OwDF8zI28KJrQaSJ1qu8ZsrRpya4mvce+2a5vLyXlz0tovwx6MQAzYzUYjOlzfKVjck210Q+/qngVDce7dk7KA==
   dependencies:
-    "@znemz/js-common-eslint-config" "^0.0.22"
+    "@znemz/js-common-eslint-config" "^0.0.23"
     confusing-browser-globals "^1.0.8"
     eslint-config-airbnb "^17.0.0"
     eslint-import-resolver-jest "^2.1.1"
@@ -1365,15 +1365,15 @@
     eslint-plugin-jsx-a11y "^6.0.3"
     eslint-plugin-react "^7.12.4"
 
-"@znemz/js-common-eslint-config@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-eslint-config/-/js-common-eslint-config-0.0.22.tgz#ae43fa60993f33c8381bb120a5603afc190be162"
-  integrity sha512-xEL8mJr2iVY6VghfP37GMZh9tPHI/4yS/v07dtdg+TTgyTW1CTSFkqxwm+cxTp7g/5UtQh6URcBTAJP9AplX7g==
+"@znemz/js-common-eslint-config@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-eslint-config/-/js-common-eslint-config-0.0.23.tgz#db2a26ba54c89ccd52e83c857a55b04352efff56"
+  integrity sha512-LOsu4uemnnHLqdBK5wLDXBweuGse435mUKVcV+8nXPT1HTPUGqFgOIbBd6Qv1i7EGWy2dywPmPVkARvk/i+Tpw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^1.11"
     "@typescript-eslint/parser" "^1.11"
     "@znemz/eslint-plugin-nem" "0.0.1"
-    "@znemz/js-common-prettierrc-clone" "^0.0.22"
+    "@znemz/js-common-prettierrc-clone" "^0.0.23"
     babel-eslint "^10.0.1"
     eslint "^5.16"
     eslint-config-airbnb-base "^14.0.0"
@@ -1384,12 +1384,12 @@
     eslint-plugin-prettier "^3.1.0"
     prettier "^1.18.2"
 
-"@znemz/js-common-gulp-monorepo-typescript@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-gulp-monorepo-typescript/-/js-common-gulp-monorepo-typescript-0.0.22.tgz#9b1c9c290b9eb6f584b616711062df41d1628e0d"
-  integrity sha512-a/jLEhRnnzjTREn8c7EbLhJD/X/C1zMrmavQLonPXZGOv47iV9h38LsO6/eoHuGJUlgos+0/i72vVzNhm2DdoA==
+"@znemz/js-common-gulp-monorepo-typescript@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-gulp-monorepo-typescript/-/js-common-gulp-monorepo-typescript-0.0.23.tgz#9a5ce0378c042991229c5ccc711fb81de5adea2b"
+  integrity sha512-nLVubzcJgVrY3UBVBKE/qCDkjL15Ea8Dyw8zpCvOZXYMt8qkAwo+h6MOvtoV8/WdeiG/sKvzn07f06FhE4eemg==
   dependencies:
-    "@znemz/js-common-debug-clone" "^0.0.22"
+    "@znemz/js-common-debug-clone" "^0.0.23"
     commander "^3.0.0"
     debug-fabulous "^1.1.0"
     del "^5.0.0"
@@ -1402,20 +1402,20 @@
     lodash "^4.17.15"
     typescript "^3.5.1"
 
-"@znemz/js-common-prettierrc-clone@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-prettierrc-clone/-/js-common-prettierrc-clone-0.0.22.tgz#7fee96b9569cbec44848936041ef10229969af4b"
-  integrity sha512-szFanPol2L0FMJDTNB6GMP0ZmvSHQ9quBgxk8JCoDD1qNOyjWOpH+Xl+GBCAa7tBB8qhyrcSJ4hH9zgrop+Acw==
+"@znemz/js-common-prettierrc-clone@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-prettierrc-clone/-/js-common-prettierrc-clone-0.0.23.tgz#85f60cd8ff8d33b8494950b721cd37f334f544eb"
+  integrity sha512-4HBicSCQ/FfWtCDdzeXzJTQ5wAeJgVYjoY1gnOVqwMlyksdOzn8Fe6MtS+uRuDXDGtnIZtC/RjIAHv5dOjHGjA==
   dependencies:
-    "@znemz/js-common-cpy-cli" "^0.0.22"
+    "@znemz/js-common-cpy-cli" "^0.0.23"
 
-"@znemz/js-common-tsconfig-clone@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-tsconfig-clone/-/js-common-tsconfig-clone-0.0.22.tgz#ee79d79d73eb2b24fc02dc4db27c5be3a6e33f7f"
-  integrity sha512-Y+cK403TJ7/YTfbNgjXsmfJLLITSUV9tFNugatBY++phnVfSBdcrPx9Ga/jpe6q6gNEO9er9lzgIgq7XIKnomw==
+"@znemz/js-common-tsconfig-clone@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-tsconfig-clone/-/js-common-tsconfig-clone-0.0.23.tgz#0fef00f023eb0d2a29fc54dfb8c5daee05abd4f0"
+  integrity sha512-lRI3IFIg/fEcEWiZNNdy4PFpiSU0UY+SbxlZQykbBSFzz633bx6FxmVieCBh+H6+g8TUbXH9qjBpz4YrxbhbvQ==
   dependencies:
-    "@znemz/js-common-cpy-cli" "^0.0.22"
-    "@znemz/js-common-debug-clone" "^0.0.22"
+    "@znemz/js-common-cpy-cli" "^0.0.23"
+    "@znemz/js-common-debug-clone" "^0.0.23"
     debug-fabulous "^1.1.0"
 
 "@znemz/react-extras-jest@^1.0.0-alpha.5":
@@ -2334,7 +2334,7 @@ concat-map@0.0.1:
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-concat-stream@^1.6.0:
+concat-stream@^1.6.0, concat-stream@^1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.2.tgz#904bdf194cd3122fc675c77fc4ac3d4ff0fd1a34"
   integrity sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==
@@ -3947,6 +3947,15 @@ gulp-typescript@^5.0.1:
     vinyl "^2.1.0"
     vinyl-fs "^3.0.3"
 
+gulp-umd@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-umd/-/gulp-umd-2.0.0.tgz#765f8ad4d91238bef57b3f0b52ed2a223a0bc098"
+  integrity sha512-zA0RDIITdOwpVUBQ6vy2R+iCsTXwDImPnWreNBmVJQAg3nDGefowV7KYwWoIeEVoxyHZT2CR50nEF6ovUh5/2A==
+  dependencies:
+    concat-stream "^1.6.2"
+    lodash.template "^4.4.0"
+    through2 "^2.0.3"
+
 gulp@4:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/gulp/-/gulp-4.0.2.tgz#543651070fd0f6ab0a0650c6a3e6ff5a7cb09caa"
@@ -5320,10 +5329,30 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
+lodash._reinterpolate@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
+  integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
+
+lodash.template@^4.4.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.template/-/lodash.template-4.5.0.tgz#f976195cf3f347d0d5f52483569fe8031ccce8ab"
+  integrity sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==
+  dependencies:
+    lodash._reinterpolate "^3.0.0"
+    lodash.templatesettings "^4.0.0"
+
+lodash.templatesettings@^4.0.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.templatesettings/-/lodash.templatesettings-4.2.0.tgz#e481310f049d3cf6d47e912ad09313b154f0fb33"
+  integrity sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==
+  dependencies:
+    lodash._reinterpolate "^3.0.0"
 
 lodash.unescape@4.0.1:
   version "4.0.1"

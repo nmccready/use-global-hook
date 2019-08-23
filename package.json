@@ -7,9 +7,11 @@
   "files": [
     "lib",
     "src",
+    "umd",
     "debug.js"
   ],
   "main": "lib/index.js",
+  "umd": "umd/index.js",
   "scripts": {
     "build": "yarn gulp default",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
@@ -42,6 +44,7 @@
     "coveralls": "^3.0.4",
     "del": "^4.1.1",
     "esm": "^3.2.22",
+    "gulp-umd": "^2.0.0",
     "prettier": "^1.18.2",
     "react": "^16.8",
     "sort-package-json": "^1.21.0",
