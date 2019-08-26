@@ -1428,10 +1428,10 @@
     "@znemz/js-common-debug-clone" "^0.0.23"
     debug-fabulous "^1.1.0"
 
-"@znemz/react-extras-jest@^1.0.0-alpha.5":
-  version "1.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/@znemz/react-extras-jest/-/react-extras-jest-1.0.0-alpha.5.tgz#2163683007d68a98aaad5b5953f665102d22af90"
-  integrity sha512-k7Hya4oAHy1DNE4oGcfjDRX/zfREPeSPkuMKLS8QtAp/kxV6ewla34aYVj8QbkyiU0Wgb6f1IIzdVQ2Avm5/vg==
+"@znemz/react-extras-jest@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@znemz/react-extras-jest/-/react-extras-jest-1.1.0.tgz#3265ec6bf7ea77e7c95707aefdc4d78c1a0ad429"
+  integrity sha512-pW1+Buwu+4NGiqXF7Gbic801YseKsEto86uEqtg68ugy8jPsZB+VAn8CyC1vNIOr3xQunc3DY5tUO/KYC0/scQ==
   dependencies:
     "@types/jest" "^24.0.17"
     "@types/jest-expect-message" "^1.0.0"
