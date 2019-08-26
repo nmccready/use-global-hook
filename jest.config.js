@@ -1,5 +1,3 @@
-const debug = require('./debug').spawn('jest');
-
 const toNotIgnore = {
   modules: [].join('|'),
 };
@@ -21,7 +19,5 @@ const toExport = {
 if (toNotIgnore.modules.length) {
   toExport.transformIgnorePatterns.push(`/node_modules/(?!(${toNotIgnore.modules}))`);
 }
-
-debug(() => toExport.transformIgnorePatterns);
 
 module.exports = toExport;
