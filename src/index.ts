@@ -73,8 +73,10 @@ function useCustom<T, A, WorkR extends WorkR[] = undefined>(
   hookWork?: HookWork<WorkR>
 ): [T, A] {
   const newListener = React.useState()[1];
+  const oldState = this.state;
   React.useEffect(() => {
     this.listeners.push(newListener);
+    if (oldState !== this.state) newListener(this.state);
     return () => {
       const listenersLength = this.listeners.length;
       const filtered = [];
