@@ -8,6 +8,7 @@
     "lib",
     "src",
     "umd",
+    "module",
     "debug.js"
   ],
   "main": "lib/index.js",
