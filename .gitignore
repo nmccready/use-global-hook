@@ -52,7 +52,6 @@ package-lock.json
 
 .history
 .editorconfig
-debug.js
 .prettierrc.js
 .eslint*
 .tmp
