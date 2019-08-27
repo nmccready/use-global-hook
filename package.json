@@ -16,7 +16,7 @@
     "build": "yarn gulp default && yarn roll:it",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "docs:api:markdown": "yarn typedoc --theme markdown --exclude ./src/*.spec.ts --exclude ./src/test/* --out ./docs/api ./src",
-    "docs:api:website": "yarn typedoc --exclude ./src/*.spec.ts --exclude ./src/test/* --out ../docs/api_website ./src",
+    "docs:api:website": "yarn typedoc --exclude ./src/*.spec.ts --exclude ./src/test/* --out docs/api_website ./src",
     "gulp": "node -r esm ./node_modules/.bin/gulp",
     "jest": "node -r esm ./node_modules/.bin/jest",
     "lint": "eslint --ext .js,.ts,.tsx *.js src --color",
@@ -29,7 +29,7 @@
     "test": "yarn jest",
     "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
     "preversion": "yarn build",
-    "website": "yarn x0 build docs/website",
+    "website": "yarn x0 build docs",
     "website:dev": "yarn gulp docs:website:dev"
   },
   "devDependencies": {

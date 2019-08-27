@@ -46,33 +46,31 @@ const build = (
 
 gulp.task('build', build());
 
-gulp.task('docs:website', () => run('yarn x0 docs').exec());
-
 const docsSource = ['**/*.md?(x)', '!docs/**/*', '!node_modules/**/*'];
 
-gulp.task(
-  'docs:website',
-  gulp.series('docs:clean', () =>
-    gulp
-      .src(docsSource)
-      .pipe(replace(/\/index.md/g, '')) // fix links
-      .pipe(
-        rename((filePath) => {
-          if (filePath.basename.toUpperCase() === 'README') {
-            filePath.basename = 'index';
-            if (filePath.dirname === '.') {
-              // we're at root README
-              filePath.basename = 'docs';
-            }
+const setupWebsiteMarkdown = () =>
+  gulp
+    .src(docsSource)
+    .pipe(replace(/\/index.md/g, '')) // fix links
+    .pipe(
+      rename((filePath) => {
+        if (filePath.basename.toUpperCase() === 'README') {
+          filePath.basename = 'index';
+          if (filePath.dirname === '.') {
+            // we're at root README
+            filePath.basename = 'docs';
           }
-        })
-      )
-      .pipe(gulp.dest('docs/website'))
-  )
-);
+        }
+      })
+    )
+    .pipe(gulp.dest('docs/website'));
+
+const runDevWebsite = () => run('yarn x0 docs/website', { verbosity: 3 }).exec();
+
+gulp.task('docs:website', gulp.series('docs:clean', setupWebsiteMarkdown, runDevWebsite));
 
 gulp.task(
-  'docs:watch',
+  'docs:website:dev',
   gulp.series('docs:website', () => {
     gulp.watch(docsSource, gulp.series('docs:website'));
   })

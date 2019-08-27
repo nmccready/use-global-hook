@@ -59,4 +59,3 @@ babel.config.js
 
 docs/website/*.md
 docs/api_website
-docs/public

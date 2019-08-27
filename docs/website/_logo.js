@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-export default ({ width = 128, height = 128, color = 'currentcolor' }) => (
+export default ({ width = 70, height = 70, color = 'currentcolor' }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 841.9 595.3"

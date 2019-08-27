@@ -37,8 +37,8 @@ const hardRoutes = [
   {
     key: './api.md',
     name: 'Api',
-    href: 'https://localhost:9090',
-    path: 'https://localhost:9090',
+    href: 'https://nmccready.github.io/use-global-hook-api-website/',
+    path: 'https://nmccready.github.io/use-global-hook-api-website/',
   },
   {
     key: './coverage.md',
