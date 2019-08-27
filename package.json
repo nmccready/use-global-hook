@@ -65,6 +65,7 @@
   "x0": {
     "static": true,
     "outDir": "docs",
+    "basename": "/use-global-hook",
     "title": "use-global-hook",
     "links": [
       {
