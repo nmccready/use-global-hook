@@ -29,7 +29,7 @@
     "test": "yarn jest",
     "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
     "preversion": "yarn build",
-    "website": "yarn x0 build docs",
+    "website": "yarn x0 build docs/website",
     "website:dev": "yarn gulp docs:website:dev"
   },
   "devDependencies": {
@@ -64,7 +64,7 @@
   "umd": "umd/index.js",
   "x0": {
     "static": true,
-    "outDir": "docs/public",
+    "outDir": "docs",
     "title": "use-global-hook",
     "links": [
       {
