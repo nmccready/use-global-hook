@@ -38,7 +38,7 @@
 
 Ƭ **AssociateActionsFn**: *function*
 
-*Defined in [index.ts:18](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L18)*
+*Defined in [index.ts:18](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L18)*
 
 #### Type declaration:
 
@@ -63,7 +63,7 @@ ___
 
 Ƭ **HookWork**: *function*
 
-*Defined in [index.ts:74](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L74)*
+*Defined in [index.ts:74](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L74)*
 
 #### Type declaration:
 
@@ -75,7 +75,7 @@ ___
 
 Ƭ **Initializer**: *function*
 
-*Defined in [index.ts:20](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L20)*
+*Defined in [index.ts:20](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L20)*
 
 #### Type declaration:
 
@@ -93,7 +93,7 @@ ___
 
 Ƭ **SetRefFn**: *function*
 
-*Defined in [index.ts:14](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L14)*
+*Defined in [index.ts:14](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L14)*
 
 #### Type declaration:
 
@@ -112,7 +112,7 @@ ___
 
 Ƭ **SetStateFn**: *function*
 
-*Defined in [index.ts:12](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L12)*
+*Defined in [index.ts:12](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L12)*
 
 #### Type declaration:
 
@@ -132,7 +132,7 @@ ___
 
 Ƭ **UseCustomFn**: *function*
 
-*Defined in [index.ts:16](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L16)*
+*Defined in [index.ts:16](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L16)*
 
 #### Type declaration:
 
@@ -150,7 +150,7 @@ ___
 
 Ƭ **UseEffect**: *function*
 
-*Defined in [index.ts:4](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L4)*
+*Defined in [index.ts:4](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L4)*
 
 #### Type declaration:
 
@@ -169,7 +169,7 @@ ___
 
 Ƭ **UseState**: *function*
 
-*Defined in [index.ts:5](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L5)*
+*Defined in [index.ts:5](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L5)*
 
 #### Type declaration:
 
@@ -191,7 +191,7 @@ ___
 
 Ƭ **UseStoreFn**: *function*
 
-*Defined in [index.ts:35](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L35)*
+*Defined in [index.ts:35](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L35)*
 
 #### Type declaration:
 
@@ -221,7 +221,7 @@ Name | Type |
 
 ▸ **associateActions**<**T**, **InnerA**, **OuterA**>(`store`: [Store](../interfaces/_index_.store.md)‹T, OuterA›, `actions`: InnerA): *OuterA*
 
-*Defined in [index.ts:110](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L110)*
+*Defined in [index.ts:110](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L110)*
 
 **Type parameters:**
 
@@ -246,7 +246,7 @@ ___
 
 ▸ **setRef**<**T**, **A**>(`this`: [Store](../interfaces/_index_.store.md)‹T, A›, `newState`: T, `doDigest?`: boolean): *void*
 
-*Defined in [index.ts:70](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L70)*
+*Defined in [index.ts:70](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L70)*
 
 **Type parameters:**
 
@@ -270,7 +270,7 @@ ___
 
 ▸ **setState**<**T**, **A**>(`this`: [Store](../interfaces/_index_.store.md)‹T, A›, `newState`: T, `isRef?`: boolean, `doDigest`: boolean): *void*
 
-*Defined in [index.ts:52](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L52)*
+*Defined in [index.ts:52](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L52)*
 
 **Type parameters:**
 
@@ -295,7 +295,7 @@ ___
 
 ▸ **useCustom**<**T**, **A**, **WorkR**>(`this`: [Store](../interfaces/_index_.store.md)‹T, A›, `React`: [ReactLib](../interfaces/_index_.reactlib.md), `hookWork?`: [HookWork](_index_.md#hookwork)‹WorkR›): *[T, A]*
 
-*Defined in [index.ts:76](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L76)*
+*Defined in [index.ts:76](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L76)*
 
 **Type parameters:**
 
@@ -321,7 +321,7 @@ ___
 
 ▸ **useStore**<**T**, **InnerA**, **OuterA**, **WorkR**>(`__namedParameters`: object): *function*
 
-*Defined in [index.ts:129](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L129)*
+*Defined in [index.ts:129](https://github.com/nmccready/use-global-hook/blob/59d2fe3/src/index.ts#L129)*
 
 **Type parameters:**
 
