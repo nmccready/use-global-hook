@@ -25,13 +25,13 @@
     "postinstall:2": "yarn js-common-eslint-config-react-mono-clone && js-common-babel-config-clone",
     "postinstall:3": "yarn js-common-prettierrc-clone && yarn js-common-eslint-config-mono-clone",
     "prepare": "yarn postinstall:1 && yarn postinstall:2 && yarn postinstall:3 && yarn sort-package-json",
+    "publish:api:website": "scripts/publishApiWebsite.sh",
     "roll:it": "yarn rollup -c ./rollup.config.ts",
     "test": "yarn jest",
     "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
     "preversion": "yarn build",
     "website": "yarn x0 build docs/website",
-    "website:dev": "yarn gulp docs:website:dev",
-    "publish:api:website": "scripts/publishApiWebsite.sh"
+    "website:dev": "yarn gulp docs:website:dev"
   },
   "devDependencies": {
     "@compositor/logo": "^1.4.0",
