@@ -9,9 +9,9 @@ interface ReactLib {
 }
 
 /* since use-global-hook is not ts yet, might move this to it's index.d.ts file */
-export type SetStateFn<T> = (newState: T, isRef?: boolean) => void;
+export type SetStateFn<T> = (newState: T, isRef?: boolean, doDigest?: boolean) => void;
 
-export type SetRefFn<T> = (newState: T) => void;
+export type SetRefFn<T> = (newState: T, doDigest?: boolean) => void;
 
 export type UseCustomFn = (React: ReactLib) => void;
 
@@ -49,9 +49,15 @@ export interface Store<T, OuterA = OuterBaseActions<T>> {
   listeners: Dispatch<unknown>[];
 }
 
-function setState<T, A>(this: Store<T, A>, newState: T, isRef?: boolean): void {
+function setState<T, A>(
+  this: Store<T, A>,
+  newState: T,
+  isRef?: boolean,
+  doDigest: boolean = true
+): void {
   const listenersLength = this.listeners.length;
   this.state = isRef ? newState : { ...this.state, ...newState };
+  if (!doDigest) return;
   for (let i = 0; i < listenersLength; i++) {
     const fn = this.listeners[i];
     if (!fn || typeof fn !== 'function') {
@@ -61,8 +67,8 @@ function setState<T, A>(this: Store<T, A>, newState: T, isRef?: boolean): void {
   }
 }
 
-function setRef<T, A>(this: Store<T, A>, newState: T): void {
-  setState.call(this, newState, true);
+function setRef<T, A>(this: Store<T, A>, newState: T, doDigest?: boolean): void {
+  setState.call(this, newState, true, doDigest);
 }
 
 export type HookWork<T = undefined> = () => T;

@@ -27,6 +27,17 @@ describe('useGlobalHook', () => {
         expect(result.current[0].a).toEqual('a');
       });
 
+      it('skip digest', () => {
+        const useTest = useGlobalHook<SomeState>({ React, initialState: { a: undefined } });
+        const { result } = renderHook(() => useTest());
+
+        act(() => {
+          result.current[1].setState({ a: 'a' }, false);
+        });
+
+        expect(result.current[0].a).toEqual(undefined);
+      });
+
       it('initializer', () => {
         const initializer = (store: Store<SomeState>) => {
           store.setState({ a: 'a' });
@@ -107,6 +118,17 @@ describe('useGlobalHook', () => {
         });
 
         expect(result.current[0], 'checks for reference not deep equal').toBe(ref);
+      });
+
+      it('skip digest', () => {
+        const useTest = useGlobalHook<SomeState>({ React, initialState: { a: undefined } });
+        const { result } = renderHook(() => useTest());
+
+        act(() => {
+          result.current[1].setRef({ a: 'a' }, false);
+        });
+
+        expect(result.current[0].a).toEqual(undefined);
       });
     });
 

@@ -59,6 +59,15 @@ Search GitHub repos by username.
 Handle the ajax request asynchronously with async/await.
 Update the requests counter on every search.
 
+### [ setRef vs setState ](https://codepen.io/nmccready/pen/vYBgrGR)
+
+Sometimes you just need to set a reference and wipe the state clean.
+
+There are many use cases:
+
+- reset / wipe
+- tracking dom elements `ref={setRef}`
+
 [npm-image]: https://img.shields.io/npm/v/@znemz/use-global-hook.svg
 [npm-url]: https://www.npmjs.com/package/@znemz/use-global-hook
 [travis-image]: https://img.shields.io/travis/nmccready/use-global-hook.svg
