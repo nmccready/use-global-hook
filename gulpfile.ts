@@ -24,8 +24,10 @@ gulp.task('docs:clean', () =>
   del(['docs/public', 'docs/api_website', 'docs/website/*.md?(x)'])
 );
 
-gulp.task('docs:clean:use-global-hook-api-website', () =>
-  del(['../use-global-hook-api-website/**/*', '!../use-global-hook-api-website/.gitignore'])
+gulp.task('docs:clean:api:website', () =>
+  del(['../use-global-hook-api-website/**/*', '!../use-global-hook-api-website/.gitignore'], {
+    force: true,
+  })
 );
 
 const build = (
@@ -76,13 +78,14 @@ gulp.task(
   })
 );
 
-gulp.task('docs:api', () => run('yarn docs:api').exec());
+gulp.task('docs:api:markdown', () => run('yarn docs:api:markdown').exec());
 
-gulp.task('docs:api', () =>
+gulp.task(
+  'docs:api:website',
   gulp.series(
-    run('yarn docs:api:website').exec(),
-    gulp.src('docs/api_website/**/*').pipe(gulp.dest('../use-global-hook-api-website'))
+    () => run('yarn docs:api:website').exec(),
+    () => gulp.src('docs/api_website/**/*').pipe(gulp.dest('../use-global-hook-api-website'))
   )
 );
 
-gulp.task('default', gulp.series('clean', gulp.parallel('build', 'docs:api')));
+gulp.task('default', gulp.series('clean', gulp.parallel('build', 'docs:api:markdown')));
