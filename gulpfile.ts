@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import ts from 'gulp-typescript';
 import del from 'del';
+import run from 'gulp-run';
 
 /*
 Gulp is for an itemized build so you can easily
@@ -14,7 +15,7 @@ const pkg = require('./package.json');
 const getDir = (fileName: string) => fileName.split('/')[0];
 
 gulp.task('clean', () =>
-  del(['.tmp', getDir(pkg.main), '*.log', getDir(pkg.umd), getDir(pkg.module)])
+  del(['.tmp', getDir(pkg.main), '*.log', getDir(pkg.umd), getDir(pkg.module), 'docs'])
 );
 
 const build = (
@@ -33,4 +34,6 @@ const build = (
 
 gulp.task('build', build());
 
-gulp.task('default', gulp.series('clean', gulp.series('build')));
+gulp.task('docs:api', () => run('yarn docs:api').exec());
+
+gulp.task('default', gulp.series('clean', gulp.parallel('build', 'docs:api')));
