@@ -3,7 +3,7 @@
   "version": "1.1.7",
   "repository": "github:nmccready/use-global-hook",
   "license": "ISC",
-  "author": "andregardi",
+  "author": "nmccready",
   "files": [
     "lib",
     "src",
@@ -16,6 +16,7 @@
     "build": "yarn gulp default && yarn roll:it",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "docs:api": "yarn typedoc --theme markdown --exclude ./src/*.spec.ts --exclude ./src/test/* --out ./docs/api ./src",
+    "docs:api:website": "yarn typedoc --exclude ./src/*.spec.ts --exclude ./src/test/* --out ../docs/api_website ./src",
     "gulp": "node -r esm ./node_modules/.bin/gulp",
     "jest": "node -r esm ./node_modules/.bin/jest",
     "lint": "eslint --ext .js,.ts,.tsx *.js src --color",
@@ -27,9 +28,13 @@
     "roll:it": "yarn rollup -c ./rollup.config.ts",
     "test": "yarn jest",
     "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
-    "preversion": "yarn build"
+    "preversion": "yarn build",
+    "website": "yarn x0 build docs/website",
+    "website:dev": "yarn gulp docs:website:dev"
   },
   "devDependencies": {
+    "@compositor/logo": "^1.4.0",
+    "@compositor/x0": "^6.0.7",
     "@testing-library/react-hooks": "^2.0.1",
     "@types/bluebird": "^3.5.27",
     "@types/react": "^16.8.19",
@@ -55,5 +60,17 @@
     "typedoc-plugin-markdown": "^2.1.4",
     "typescript": "^3.5.1"
   },
-  "umd": "umd/index.js"
+  "originalAuthor": "andregardi",
+  "umd": "umd/index.js",
+  "x0": {
+    "static": true,
+    "outDir": "docs/public",
+    "title": "use-global-hook",
+    "links": [
+      {
+        "rel": "shortcut icon",
+        "href": "./favicon.ico"
+      }
+    ]
+  }
 }
