@@ -30,7 +30,8 @@
     "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
     "preversion": "yarn build",
     "website": "yarn x0 build docs/website",
-    "website:dev": "yarn gulp docs:website:dev"
+    "website:dev": "yarn gulp docs:website:dev",
+    "publish:api:website": "cd ../use-global-hook-api-website/ && git push origin"
   },
   "devDependencies": {
     "@compositor/logo": "^1.4.0",

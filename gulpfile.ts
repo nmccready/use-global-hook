@@ -67,6 +67,10 @@ const setupWebsiteMarkdown = () =>
 
 const runDevWebsite = () => run('yarn x0 docs/website', { verbosity: 3 }).exec();
 
+const publishMainWebsite = () => run('yarn website', { verbosity: 3 }).exec();
+
+const publishApiWebsite = () => run('yarn publish:api:website', { verbosity: 3 }).exec();
+
 gulp.task('docs:website', gulp.series('docs:clean', setupWebsiteMarkdown, runDevWebsite));
 
 gulp.task(
@@ -86,4 +90,17 @@ gulp.task(
   )
 );
 
-gulp.task('default', gulp.series('clean', gulp.parallel('build', 'docs:api:markdown')));
+gulp.task('default', gulp.series('clean', 'build'));
+
+gulp.task(
+  'publish',
+  gulp.series(
+    'default',
+    gulp.parallel(
+      'build',
+      gulp.series('docs:api:website', publishApiWebsite),
+      'docs:api:markdown',
+      gulp.series('docs:website', publishMainWebsite)
+    )
+  )
+);
