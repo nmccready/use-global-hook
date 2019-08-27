@@ -21,7 +21,7 @@
 
 • **useEffect**: *[UseEffect](../modules/_index_.md#useeffect)*
 
-*Defined in [index.ts:7](https://github.com/nmccready/use-global-hook/blob/6416474/src/index.ts#L7)*
+*Defined in [index.ts:7](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L7)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **useState**: *[UseState](../modules/_index_.md#usestate)*
 
-*Defined in [index.ts:8](https://github.com/nmccready/use-global-hook/blob/6416474/src/index.ts#L8)*
+*Defined in [index.ts:8](https://github.com/nmccready/use-global-hook/blob/5f1dd17/src/index.ts#L8)*

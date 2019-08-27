@@ -71,12 +71,12 @@ const publishMainWebsite = () => run('yarn website', { verbosity: 3 }).exec();
 
 const publishApiWebsite = () => run('yarn publish:api:website', { verbosity: 3 }).exec();
 
-gulp.task('docs:website', gulp.series('docs:clean', setupWebsiteMarkdown, runDevWebsite));
+gulp.task('docs:website', gulp.series('docs:clean', setupWebsiteMarkdown));
 
 gulp.task(
   'docs:website:dev',
-  gulp.series('docs:website', () => {
-    gulp.watch(docsSource, gulp.series('docs:website'));
+  gulp.series('docs:website', runDevWebsite, () => {
+    gulp.watch(docsSource, gulp.series('docs:website', runDevWebsite));
   })
 );
 
@@ -93,14 +93,10 @@ gulp.task(
 gulp.task('default', gulp.series('clean', 'build'));
 
 gulp.task(
-  'publish',
-  gulp.series(
-    'default',
-    gulp.parallel(
-      'build',
-      gulp.series('docs:api:website', publishApiWebsite),
-      'docs:api:markdown',
-      gulp.series('docs:website', publishMainWebsite)
-    )
+  'publish:websites',
+  gulp.parallel(
+    gulp.series('docs:api:website', publishApiWebsite),
+    'docs:api:markdown',
+    gulp.series('docs:website', publishMainWebsite)
   )
 );
