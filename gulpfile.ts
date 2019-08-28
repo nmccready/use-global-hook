@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import ts from 'gulp-typescript';
 import del from 'del';
 import run from 'gulp-run';
-import replace from 'gulp-replace';
+// import replace from 'gulp-replace';
 import rename from 'gulp-rename';
 
 /*
@@ -38,7 +38,16 @@ gulp.task('build', build());
 
 const docsClean = () => del(['docs']);
 
-const docsApiWebsite = () => run('yarn docs:api:website', { verbosity: 3 }).exec();
+const docsApiWebsite404 = () =>
+  gulp
+    .src('docs/index.html')
+    .pipe(rename('404.html'))
+    .pipe(gulp.dest('docs'));
+
+const docsApiWebsite = gulp.series(
+  () => run('yarn docs:api:website', { verbosity: 3 }).exec(),
+  docsApiWebsite404
+);
 
 const docsApiMarkdown = () => run('yarn docs:api:markdown', { verbosity: 3 }).exec();
 

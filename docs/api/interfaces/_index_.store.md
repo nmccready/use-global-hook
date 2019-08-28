@@ -30,7 +30,7 @@
 
 • **actions**: *OuterA*
 
-*Defined in [index.ts:47](https://github.com/nmccready/use-global-hook/blob/8ce7f42/src/index.ts#L47)*
+*Defined in [index.ts:47](https://github.com/nmccready/use-global-hook/blob/f91d203/src/index.ts#L47)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **listeners**: *Dispatch‹unknown›[]*
 
-*Defined in [index.ts:49](https://github.com/nmccready/use-global-hook/blob/8ce7f42/src/index.ts#L49)*
+*Defined in [index.ts:49](https://github.com/nmccready/use-global-hook/blob/f91d203/src/index.ts#L49)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **setRef**: *[SetRefFn](../modules/_index_.md#setreffn)‹T›*
 
-*Defined in [index.ts:46](https://github.com/nmccready/use-global-hook/blob/8ce7f42/src/index.ts#L46)*
+*Defined in [index.ts:46](https://github.com/nmccready/use-global-hook/blob/f91d203/src/index.ts#L46)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **setState**: *[SetStateFn](../modules/_index_.md#setstatefn)‹T›*
 
-*Defined in [index.ts:45](https://github.com/nmccready/use-global-hook/blob/8ce7f42/src/index.ts#L45)*
+*Defined in [index.ts:45](https://github.com/nmccready/use-global-hook/blob/f91d203/src/index.ts#L45)*
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 • **state**: *T*
 
-*Defined in [index.ts:48](https://github.com/nmccready/use-global-hook/blob/8ce7f42/src/index.ts#L48)*
+*Defined in [index.ts:48](https://github.com/nmccready/use-global-hook/blob/f91d203/src/index.ts#L48)*

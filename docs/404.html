@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>OuterBaseActions | @znemz/use-global-hook</title>
+	<title>@znemz/use-global-hook</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@znemz/use-global-hook</a>
+					<a href="index.html" class="title">@znemz/use-global-hook</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -53,170 +53,102 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../globals.html">Globals</a>
-				</li>
-				<li>
-					<a href="../modules/_actions_.html">&quot;actions&quot;</a>
-				</li>
-				<li>
-					<a href="_actions_.outerbaseactions.html">OuterBaseActions</a>
+					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>Interface OuterBaseActions&lt;T&gt;</h1>
+			<h1> @znemz/use-global-hook</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>T</h4>
-					</li>
+			<div class="tsd-panel tsd-typography">
+				<a href="#znemzuse-global-hook-a-hrefhttpswwwnpmjscompackageznemzuse-global-hookimg-srchttpsimgshieldsionpmvznemzuse-global-hooksvg-altnpm-versiona-a-hrefhttpstravis-ciorgnmccreadyuse-global-hookimg-srchttpsimgshieldsiotravisnmccreadyuse-global-hooksvg-altbuild-statusa-a-hrefhttpscoverallsiogithubnmccreadyuse-global-hookbranchmasterimg-srchttpscoverallsioreposgithubnmccreadyuse-global-hookbadgesvg-alttest-coveragea" id="znemzuse-global-hook-a-hrefhttpswwwnpmjscompackageznemzuse-global-hookimg-srchttpsimgshieldsionpmvznemzuse-global-hooksvg-altnpm-versiona-a-hrefhttpstravis-ciorgnmccreadyuse-global-hookimg-srchttpsimgshieldsiotravisnmccreadyuse-global-hooksvg-altbuild-statusa-a-hrefhttpscoverallsiogithubnmccreadyuse-global-hookbranchmasterimg-srchttpscoverallsioreposgithubnmccreadyuse-global-hookbadgesvg-alttest-coveragea" style="color: inherit; text-decoration: none;">
+					<h1>@znemz/use-global-hook <a href="https://www.npmjs.com/package/@znemz/use-global-hook"><img src="https://img.shields.io/npm/v/@znemz/use-global-hook.svg" alt="NPM version"></a> <a href="https://travis-ci.org/nmccready/use-global-hook"><img src="https://img.shields.io/travis/nmccready/use-global-hook.svg" alt="build status"></a> <a href="https://coveralls.io/github/nmccready/use-global-hook?branch=master"><img src="https://coveralls.io/repos/github/nmccready/use-global-hook/badge.svg" alt="Test coverage"></a></h1>
+				</a>
+				<p>Easy state management for react using hooks in less than 1kb.</p>
+				<hr>
+				<p>Minimal example:</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> useGlobalHook <span class="hljs-keyword">from</span> <span class="hljs-string">'@znemz/use-global-hook'</span>;
+
+<span class="hljs-keyword">const</span> initialState = {
+  <span class="hljs-attr">counter</span>: <span class="hljs-number">0</span>,
+};
+
+<span class="hljs-keyword">const</span> actions = {
+  <span class="hljs-attr">addToCounter</span>: <span class="hljs-function">(<span class="hljs-params">store, amount</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> newCounterValue = store.state.counter + amount;
+    store.setState({ <span class="hljs-attr">counter</span>: newCounterValue });
+  },
+};
+
+<span class="hljs-keyword">const</span> useGlobal = useGlobalHook({ React, initialState, actions });
+
+<span class="hljs-keyword">const</span> App = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">const</span> [globalState, globalActions] = useGlobal();
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        counter:
+        {globalState.counter}
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> globalActions.addToCounter(1)}&gt;
+        +1 to global
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App;</code></pre>
+				<hr>
+				<a href="#complete-examples" id="complete-examples" style="color: inherit; text-decoration: none;">
+					<h3>Complete examples:</h3>
+				</a>
+				<a href="#a-hrefhttpscodesandboxiosv6zz2nwow5-titlecodesandboxseveral-counters-one-valuea" id="a-hrefhttpscodesandboxiosv6zz2nwow5-titlecodesandboxseveral-counters-one-valuea" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://codesandbox.io/s/v6zz2nwow5" title="CodeSandBox">Several counters, one value</a></h4>
+				</a>
+				<p>Add as many counters as you want, it will all share the same global value.
+					Every time one counter add 1 to the global value, all counters will render.
+				The parent component won&#39;t render again.</p>
+				<hr>
+				<a href="#a-hrefhttpscodesandboxioswqvykj5497-titlecodesandboxasynchronous-ajax-requestsa" id="a-hrefhttpscodesandboxioswqvykj5497-titlecodesandboxasynchronous-ajax-requestsa" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://codesandbox.io/s/wqvykj5497" title="CodeSandBox">Asynchronous ajax requests</a></h4>
+				</a>
+				<p>Search GitHub repos by username.
+					Handle the ajax request asynchronously with async/await.
+				Update the requests counter on every search.</p>
+				<a href="#a-hrefhttpscodepenionmccreadypenvybgrgr-setref-vs-setstate-a" id="a-hrefhttpscodepenionmccreadypenvybgrgr-setref-vs-setstate-a" style="color: inherit; text-decoration: none;">
+					<h3><a href="https://codepen.io/nmccready/pen/vYBgrGR"> setRef vs setState </a></h3>
+				</a>
+				<p>Sometimes you just need to set a reference and wipe the state clean.</p>
+				<p>There are many use cases:</p>
+				<ul>
+					<li>reset / wipe</li>
+					<li>tracking dom elements <code>ref={setRef}</code></li>
 				</ul>
-			</section>
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">OuterBaseActions</span>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_actions_.outerbaseactions.html#setref" class="tsd-kind-icon">set<wbr>Ref</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_actions_.outerbaseactions.html#setstate" class="tsd-kind-icon">set<wbr>State</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="setref" class="tsd-anchor"></a>
-					<h3>set<wbr>Ref</h3>
-					<div class="tsd-signature tsd-kind-icon">set<wbr>Ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nmccready/use-global-hook/blob/f91d203/src/actions.ts#L5">actions.ts:5</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>newState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, doDigest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>newState: <span class="tsd-signature-type">T</span></h5>
-											</li>
-											<li>
-												<h5><span class="tsd-flag ts-flagOptional">Optional</span> doDigest: <span class="tsd-signature-type">boolean</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="setstate" class="tsd-anchor"></a>
-					<h3>set<wbr>State</h3>
-					<div class="tsd-signature tsd-kind-icon">set<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/nmccready/use-global-hook/blob/f91d203/src/actions.ts#L4">actions.ts:4</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>newState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, doDigest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>newState: <span class="tsd-signature-type">T</span></h5>
-											</li>
-											<li>
-												<h5><span class="tsd-flag ts-flagOptional">Optional</span> doDigest: <span class="tsd-signature-type">boolean</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-			</section>
+			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="../globals.html"><em>Globals</em></a>
-					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/_actions_.html">"actions"</a>
+						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_.html">"index"</a>
+						<a href="modules/_actions_.html">"actions"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_spec_.html">"index.spec"</a>
+						<a href="modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_spec_.html">"index.spec"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_actions_.innerbaseactions.html" class="tsd-kind-icon">Inner<wbr>Base<wbr>Actions</a>
-					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_actions_.outerbaseactions.html" class="tsd-kind-icon">Outer<wbr>Base<wbr>Actions</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_actions_.outerbaseactions.html#setref" class="tsd-kind-icon">set<wbr>Ref</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_actions_.outerbaseactions.html#setstate" class="tsd-kind-icon">set<wbr>State</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../modules/_actions_.html#setref" class="tsd-kind-icon">set<wbr>Ref</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="../modules/_actions_.html#setstate" class="tsd-kind-icon">set<wbr>State</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
-						<a href="../modules/_actions_.html#actions" class="tsd-kind-icon">actions</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -286,7 +218,7 @@
 	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

@@ -25,7 +25,7 @@
 
 • **setRef**: *function*
 
-*Defined in [actions.ts:10](https://github.com/nmccready/use-global-hook/blob/8ce7f42/src/actions.ts#L10)*
+*Defined in [actions.ts:10](https://github.com/nmccready/use-global-hook/blob/f91d203/src/actions.ts#L10)*
 
 #### Type declaration:
 
@@ -45,7 +45,7 @@ ___
 
 • **setState**: *function*
 
-*Defined in [actions.ts:9](https://github.com/nmccready/use-global-hook/blob/8ce7f42/src/actions.ts#L9)*
+*Defined in [actions.ts:9](https://github.com/nmccready/use-global-hook/blob/f91d203/src/actions.ts#L9)*
 
 #### Type declaration:
 
