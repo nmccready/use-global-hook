@@ -36,13 +36,9 @@ const build = (
 
 gulp.task('build', build());
 
-const docsClean = () => del(['docs']);
+const docsClean = () => del(['docs/**/*', '!docs/.nojekyll']);
 
-// const docsApiWebsite404 = () =>
-//   gulp
-//     .src('docs/index.html')
-//     .pipe(rename('404.html'))
-//     .pipe(gulp.dest('docs'));
+gulp.task('docs:clean', docsClean);
 
 const docsApiWebsite = () => run('yarn docs:api:website', { verbosity: 3 }).exec();
 
