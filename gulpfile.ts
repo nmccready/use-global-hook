@@ -36,7 +36,7 @@ const build = (
 
 gulp.task('build', build());
 
-const docsClean = () => del(['docs/**/*', '!docs/.nojekyll']);
+const docsClean = () => del(['docs']);
 
 gulp.task('docs:clean', docsClean);
 
@@ -44,6 +44,8 @@ const docsApiWebsite = () => run('yarn docs:api:website', { verbosity: 3 }).exec
 
 const docsApiMarkdown = () => run('yarn docs:api:markdown', { verbosity: 3 }).exec();
 
+const noJekyll = () => gulp.src('.nojekyll').pipe(gulp.dest('docs'));
+
 gulp.task('default', gulp.series('clean', 'build'));
 
-gulp.task('docs', gulp.series(docsClean, docsApiWebsite, docsApiMarkdown));
+gulp.task('docs', gulp.series(docsClean, docsApiWebsite, docsApiMarkdown, noJekyll));
