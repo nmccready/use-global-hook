@@ -16,7 +16,7 @@
     "build": "yarn gulp default && yarn roll:it",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "docs:api:markdown": "yarn typedoc --theme markdown --exclude ./src/*.spec.ts --exclude ./src/test/* --out ./docs/api ./src",
-    "docs:api:website": "yarn typedoc --exclude ./src/*.spec.ts --exclude ./src/test/* --out docs/api_website ./src",
+    "docs:api:website": "yarn typedoc --exclude ./src/*.spec.ts --exclude ./src/test/* --out docs ./src",
     "gulp": "node -r esm ./node_modules/.bin/gulp",
     "jest": "node -r esm ./node_modules/.bin/jest",
     "lint": "eslint --ext .js,.ts,.tsx *.js src --color",
@@ -25,17 +25,12 @@
     "postinstall:2": "yarn js-common-eslint-config-react-mono-clone && js-common-babel-config-clone",
     "postinstall:3": "yarn js-common-prettierrc-clone && yarn js-common-eslint-config-mono-clone",
     "prepare": "yarn postinstall:1 && yarn postinstall:2 && yarn postinstall:3 && yarn sort-package-json",
-    "publish:api:website": "scripts/publishApiWebsite.sh",
     "roll:it": "yarn rollup -c ./rollup.config.ts",
     "test": "yarn jest",
     "test:ci": "yarn lint && yarn test --coverage && yarn coveralls",
-    "preversion": "yarn build",
-    "website": "yarn x0 build docs/website",
-    "website:dev": "yarn gulp docs:website:dev"
+    "preversion": "yarn build"
   },
   "devDependencies": {
-    "@compositor/logo": "^1.4.0",
-    "@compositor/x0": "^6.0.7",
     "@testing-library/react-hooks": "^2.0.1",
     "@types/bluebird": "^3.5.27",
     "@types/react": "^16.8.19",
@@ -62,17 +57,5 @@
     "typescript": "^3.5.1"
   },
   "originalAuthor": "andregardi",
-  "umd": "umd/index.js",
-  "x0": {
-    "static": true,
-    "outDir": "docs",
-    "basename": "/use-global-hook",
-    "title": "use-global-hook",
-    "links": [
-      {
-        "rel": "shortcut icon",
-        "href": "./favicon.ico"
-      }
-    ]
-  }
+  "umd": "umd/index.js"
 }
