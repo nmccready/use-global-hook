@@ -4,14 +4,14 @@ import 'jest-extended';
 import 'jest-expect-message';
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import useGlobalHook, { HookWork, Store } from '.';
+import useGlobalHook, { HookWork, Store } from '..';
 import {
   SomeState,
   NestedState,
   NestedOuterActions,
   NestedInnerActions,
   subsetActions,
-} from './test';
+} from '.';
 
 describe('useGlobalHook', () => {
   describe('default actions', () => {
