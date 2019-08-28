@@ -25,7 +25,7 @@ const build = (
     'src/**/*.ts?(x)',
     '!src/**/*.spec.ts?(x)',
     '!src/**/*.test.ts?(x)',
-    '!src/test/**/*'
+    '!src/test/**/*',
   ],
   dest = 'lib'
 ) => () =>
@@ -38,16 +38,10 @@ gulp.task('build', build());
 
 const docsClean = () => del(['docs']);
 
-const docsSource = ['**/*.md?(x)', '!docs/**/*', '!node_modules/**/*'];
+const docsApiWebsite = () => run('yarn docs:api:website', { verbosity: 3 }).exec();
 
-const docsApiWebsite = () =>
-  run('yarn docs:api:website', { verbosity: 3 }).exec();
-
-const docsApiMarkdown = () => run('yarn docs:api:markdown').exec();
+const docsApiMarkdown = () => run('yarn docs:api:markdown', { verbosity: 3 }).exec();
 
 gulp.task('default', gulp.series('clean', 'build'));
 
-gulp.task(
-  'docs',
-  gulp.series(docsClean, gulp.parallel(docsApiMarkdown, docsApiWebsite))
-);
+gulp.task('docs', gulp.series(docsClean, docsApiWebsite, docsApiMarkdown));
