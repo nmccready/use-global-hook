@@ -4,7 +4,7 @@ Easy state management for react using hooks in less than 1kb.
 
 ---
 
-Minimal example:
+## Minimal example:
 
 ```javascript
 import React from 'react';
@@ -43,9 +43,9 @@ export default App;
 
 ---
 
-### Complete examples:
+## Complete examples:
 
-#### [Several counters, one value](https://codesandbox.io/s/v6zz2nwow5 'CodeSandBox')
+### [Several counters, one value](https://codesandbox.io/s/v6zz2nwow5 'CodeSandBox')
 
 Add as many counters as you want, it will all share the same global value.
 Every time one counter add 1 to the global value, all counters will render.
@@ -53,13 +53,13 @@ The parent component won't render again.
 
 ---
 
-#### [Asynchronous ajax requests](https://codesandbox.io/s/wqvykj5497 'CodeSandBox')
+### [Asynchronous ajax requests](https://codesandbox.io/s/wqvykj5497 'CodeSandBox')
 
 Search GitHub repos by username.
 Handle the ajax request asynchronously with async/await.
 Update the requests counter on every search.
 
-### [ setRef vs setState ](https://codepen.io/nmccready/pen/vYBgrGR)
+## [ setRef vs setState ](https://codepen.io/nmccready/pen/vYBgrGR)
 
 Sometimes you just need to set a reference and wipe the state clean.
 
@@ -67,6 +67,12 @@ There are many use cases:
 
 - reset / wipe
 - tracking dom elements `ref={setRef}`
+
+## Why do we allow React Injection?
+
+- to support different React implementation
+- to allow different versions of useEffect, useState or other hooks
+  - say to allow inspection for redux-devtools see [reinspect](https://github.com/troch/reinspect) to debug your global hooks
 
 [npm-image]: https://img.shields.io/npm/v/@znemz/use-global-hook.svg
 [npm-url]: https://www.npmjs.com/package/@znemz/use-global-hook
