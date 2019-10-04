@@ -107,6 +107,40 @@ function useCustom<T, A, WorkR extends WorkR[] = undefined>(
   return [this.state, this.actions, ...workAdditions] as [T, A];
 }
 
+// rework copied from original fork, deals with double rendering, https://codesandbox.io/s/4h3n3
+// function useCustom(store, React, mapState, mapActions) {
+//   // I didn't sure what the purpose of this line
+//   // const [, originalHook] = React.useState(Object.create(null));
+//   const state = mapState ? mapState(store.state) : store.state;
+//   const actions = React.useMemo(
+//     () => (mapActions ? mapActions(store.actions) : store.actions),
+//     [mapActions, store.actions]
+//   );
+//   // but this's worked, to some extent
+//   const [, originalHook] = React.useState(state);
+
+//   React.useEffect(() => {
+//     const newListener = { oldState: {} };
+//     newListener.run = mapState
+//       ? newState => {
+//           const mappedState = mapState(newState);
+//           if (mappedState !== newListener.oldState) {
+//             newListener.oldState = mappedState;
+//             originalHook(mappedState);
+//           }
+//         }
+//       : originalHook;
+//     store.listeners.push(newListener);
+//     newListener.run(store.state);
+//     return () => {
+//       store.listeners = store.listeners.filter(
+//         listener => listener !== newListener
+//       );
+//     };
+//   }, []); // eslint-disable-line
+//   return [state, actions];
+// }
+
 function associateActions<T, InnerA, OuterA>(
   store: Store<T, OuterA>,
   actions: InnerA
